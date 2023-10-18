@@ -15,14 +15,14 @@ Fin Procedimiento
 */
 public class intDefinidaMonteCarlo {
     public static void main (String [] args) {
-        double contador_exitos1 = 0;
-        double contador_exitos2 = 0;
+        double contador_exitos1 = 0;    //contador f(x)
+        double contador_exitos2 = 0;    //contador g(x)
 
-        Scanner s = new Scanner(System.in);
+        Scanner s = new Scanner(System.in); //pedir por pantalla valor; irrelevante
         System.out.println("Introduce el número de iteraciones:");
         double n = s.nextInt();
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {   //tal cual el pseudocódigo
             double x = Math.random();
             double y = Math.random();
             if (y <= f(x)) contador_exitos1 ++;
