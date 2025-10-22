@@ -1,0 +1,1 @@
+ejemplo Montecarlo, tomar pruebas en la parte secuencial con otros generadores de números aleatorios y observar el tiempo de ejecucion
