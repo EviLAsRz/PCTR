@@ -30,12 +30,17 @@ public class escalaVPar implements Runnable{
         for(;contador<v.length/2;++contador){
             vAux2[contador] = v[contador];
         }
+        for(;contador<(v.length-v.length/4);++contador){
+            vAux3[contador] = v[contador];
+        }
+        for(;contador<v.length;++contador){
+            vAux4[contador] = vAux4[contador];
+        }
         
-
-        Thread eV1 = new Thread(new escalaVPar());
-        Thread eV2 = new Thread(new escalaVPar());
-        Thread eV3 = new Thread(new escalaVPar());
-        Thread eV4 = new Thread(new escalaVPar());
+        Thread eV1 = new Thread(new escalaVPar(vAux1));
+        Thread eV2 = new Thread(new escalaVPar(vAux2));
+        Thread eV3 = new Thread(new escalaVPar(vAux3));
+        Thread eV4 = new Thread(new escalaVPar(vAux4));
 
         eV1.start();eV2.start();eV3.start();eV4.start();
         eV1.join();eV2.join();eV3.join();eV4.join();
