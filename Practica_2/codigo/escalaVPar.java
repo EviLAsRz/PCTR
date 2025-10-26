@@ -1,5 +1,5 @@
 public class escalaVPar implements Runnable{
-    static int max = 100000;
+    static int max = 100000000;
     static int[] v = new int[max];
     int[] vParalelo; 
     int escalar = 3;
@@ -27,7 +27,7 @@ public class escalaVPar implements Runnable{
         int i;
         for(contador=0,i = 0;contador<v.length/4;++contador, ++i){
             vAux1[i] = v[contador];
-        }     
+        }
         for(i = 0;contador<v.length/2;++contador,++i){
             vAux2[i] = v[contador];
         }
@@ -45,6 +45,5 @@ public class escalaVPar implements Runnable{
 
         eV1.start();eV2.start();eV3.start();eV4.start();
         eV1.join();eV2.join();eV3.join();eV4.join();
-        
     }
 }
