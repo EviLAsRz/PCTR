@@ -1,0 +1,22 @@
+Primera versión (First):
+
+Como bien se sabe de la primera versión del algoritmo de Dekker, el programa sigue una alternancia estricta entre hilos.
+Si lanzamos el mismo proceso varias veces, se observa que el programa se bloquea ya que sigue un sistema de turnos en el que un proceso habilita que se ejecute el otro.
+
+Segunda versión (Second):
+
+En esta versión del algoritmo de Dekker se soluciona el tema de alternacia estricta.
+
+    - Hay espera activa, es decir, los procesos se quedan en un bucle esperando a que el otro salga de la sección crítica para cederle el turno.
+    - Puede dar lugar a interbloqueos ya que si ambos esperan a que el turno cambie a false y nunca ocurre, se bloqueará porque ninguno puede entrar a la sección crítica.
+
+Tercera versión (Third):
+
+
+En esta versión se reduce la espera activa, ya que solo espera mientras la intención del otro proceso sea verdadera.
+Además, reduce la posibilidad de interbloqueos al mantener la intención durante el bucle.
+
+    - Puede violarse la exclusión mutua al ambos procesos marcar su intención de ejecutarse casi simultáneamente, aumentando el contador de procesos en sección crítica.
+    - Inanición de procesos, ya que un proceso se puede quedar cediendo el paso repetidamente.
+
+Cuarta versión (Fourth): 
